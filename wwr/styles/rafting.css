@@ -10,8 +10,8 @@
     --secondary-color: #f4a261; /* warm sand */
     --accent1-color: #264653; /* dark slate blue */
     --accent2-color: #e9c46a; /* light golden yellow */
-    --heading-font: "Times New Roman", "Georgia",  serif;
-    --body-font: Arial, Helvetica, sans-serif;
+    --heading-font: "Roboto Slab", "Times New Roman", Georgia, serif;
+    --body-font: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 /* Reset Box Model */
@@ -157,6 +157,11 @@ h2 {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.adventure-card img:hover {
+  transform: scale(1.05);
 }
 
 .adventure-card figcaption {
@@ -173,6 +178,12 @@ footer {
   padding: 20px 0;
   margin-top: 50px;
   border-top: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+footer p {
+  color: white;
 }
 
 .socialmedia {
@@ -184,6 +195,7 @@ footer {
   width: 30px;
   height: 30px;
   transition: transform 0.3s;
+  filter: brightness(0) invert(1);
 }
 
 .socialmedia a img:hover {
@@ -211,6 +223,10 @@ footer {
     gap: 15px;
     text-align: center;
   }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -221,5 +237,13 @@ footer {
   nav {
     flex-direction: column;
     gap: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
   }
 }

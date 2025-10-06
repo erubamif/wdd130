@@ -10,7 +10,7 @@
     --secondary-color: #f4a261; /* warm sand */
     --accent1-color: #264653; /* dark slate blue */
     --accent2-color: #e9c46a; /* light golden yellow */
-    --heading-font: "Times New Roman", "Georgia",  serif;
+    --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
@@ -26,6 +26,7 @@ body {
   font-family: var(--body-font);
   color: var(--accent1-color);
   line-height: 1.6;
+  background-color: #f8f9fa;
 }
 
 /* Layout Width Control */
@@ -43,11 +44,13 @@ header {
   padding: 20px 0;
   background-color: var(--primary-color);
   color: white;
+  border-bottom: 3px solid var(--secondary-color);
 }
 
 header img {
   height: 80px;
   width: auto;
+  border-radius: 5px;
 }
 
 /* Navigation Flex Layout */
@@ -63,12 +66,13 @@ nav a {
   font-weight: bold;
   padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   background-color: var(--secondary-color);
   color: var(--accent1-color);
+  transform: translateY(-2px);
 }
 
 /* Headings */
@@ -80,18 +84,21 @@ h1, h2 {
 
 h1 {
   font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 h2 {
   font-size: 2rem;
   text-align: center;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
 }
 
 /* Hero Section */
 .hero-about {
   position: relative;
   height: 400px;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-background.jpg');
+  background: linear-gradient(135deg, var(--accent1-color), var(--primary-color));
   background-size: cover;
   background-position: center;
   display: flex;
@@ -100,26 +107,31 @@ h2 {
   text-align: center;
   color: white;
   margin: 30px 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .hero-content h1 {
   color: white;
   font-size: 3rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Card Styling */
 .card {
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 30px;
-  margin: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin: 40px 0;
+  border-left: 5px solid var(--secondary-color);
 }
 
 /* History Section */
@@ -133,11 +145,13 @@ h2 {
   font-size: 1.1rem;
   line-height: 1.8;
   text-align: left;
+  color: var(--accent1-color);
 }
 
 /* Adventures Section */
 .adventures-section {
   margin: 50px 0;
+  padding: 20px;
 }
 
 .adventure-grid {
@@ -149,6 +163,11 @@ h2 {
 
 .adventure-card {
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.adventure-card:hover {
+  transform: translateY(-5px);
 }
 
 .adventure-card img {
@@ -156,13 +175,15 @@ h2 {
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 2px solid var(--secondary-color);
 }
 
 .adventure-card figcaption {
   margin-top: 10px;
   font-weight: bold;
   color: var(--accent1-color);
+  font-size: 0.9rem;
 }
 
 /* Footer */
@@ -172,7 +193,15 @@ footer {
   align-items: center;
   padding: 20px 0;
   margin-top: 50px;
-  border-top: 2px solid var(--secondary-color);
+  border-top: 3px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+footer p {
+  margin: 0;
+  color: white;
 }
 
 .socialmedia {
@@ -180,26 +209,39 @@ footer {
   gap: 15px;
 }
 
-.socialmedia a img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
+.socialmedia a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
-.socialmedia a img:hover {
-  transform: scale(1.1);
+.socialmedia a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .adventure-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   header {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 15px;
   }
   
   nav {
     justify-content: center;
-    margin-top: 15px;
+    flex-wrap: wrap;
   }
   
   .adventure-grid {
@@ -211,6 +253,14 @@ footer {
     gap: 15px;
     text-align: center;
   }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -221,5 +271,17 @@ footer {
   nav {
     flex-direction: column;
     gap: 10px;
+  }
+  
+  .hero-about {
+    height: 300px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
   }
 }

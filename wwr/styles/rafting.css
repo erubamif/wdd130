@@ -1,97 +1,12 @@
 /* ================================
-   Rafting Site Stylesheet
-   Author: Erubami Freedom
-   File: rafting.css
+   Contact Page Styles
    ================================ */
 
-/* CSS Variables (color scheme + fonts) */
-:root {
-    --primary-color: #055a05; /* forest green */
-    --secondary-color: #f4a261; /* warm sand */
-    --accent1-color: #264653; /* dark slate blue */
-    --accent2-color: #e9c46a; /* light golden yellow */
-    --heading-font: "Roboto Slab", "Times New Roman", Georgia, serif;
-    --body-font: "Roboto", Arial, Helvetica, sans-serif;
-}
-
-/* Reset Box Model */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-  font-family: var(--body-font);
-  color: var(--accent1-color);
-  line-height: 1.6;
-  background-color: #f8f9fa;
-}
-
-/* Layout Width Control */
-header, main, footer {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header Grid Layout */
-header {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--primary-color);
-  color: white;
-}
-
-header img {
-  height: 80px;
-  width: auto;
-}
-
-/* Navigation Flex Layout */
-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-nav a:hover {
-  background-color: var(--secondary-color);
-  color: var(--accent1-color);
-}
-
-/* Headings */
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-/* Hero Section */
-.hero-about {
+/* Hero Section for Contact Page */
+.hero-contact {
   position: relative;
-  height: 400px;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-background.jpg');
+  height: 300px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/contact-hero.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -102,180 +17,202 @@ h2 {
   margin: 30px 20px;
 }
 
-.hero-content h1 {
+.hero-contact h1 {
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.hero-content p {
+.hero-contact p {
   font-size: 1.2rem;
   max-width: 600px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Card Styling */
-.card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 30px;
-  margin: 30px 20px;
+/* Contact Information Section */
+.contact-info-section {
+  margin: 40px 20px;
 }
 
-/* History Section */
-.history-section {
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.company-info h2, .contact-form h2 {
   text-align: center;
-  max-width: 1000px;
-  margin: 40px auto;
+  margin-bottom: 30px;
 }
 
-.history-section p {
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+}
+
+.contact-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Contact Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--accent1-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
   font-size: 1.1rem;
-  line-height: 1.8;
-  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  font-weight: bold;
 }
 
-/* Adventures Section */
-.adventures-section {
+.submit-btn:hover {
+  background-color: var(--accent1-color);
+}
+
+/* Team Section */
+.team-section {
   margin: 50px 20px;
 }
 
-.adventure-grid {
+.team-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.adventure-card {
+.team-member {
   text-align: center;
-}
-
-.adventure-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.adventure-card img:hover {
-  transform: scale(1.05);
-}
-
-.adventure-card figcaption {
-  margin-top: 10px;
-  font-weight: bold;
-  color: var(--accent1-color);
-  font-size: 0.9rem;
-}
-
-/* Footer */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px;
-  margin-top: 50px;
-  border-top: 2px solid var(--secondary-color);
-  background-color: var(--primary-color);
-  color: white;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-footer p {
-  color: white;
-  margin: 0;
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--secondary-color);
 }
 
-.socialmedia {
-  display: flex;
-  gap: 15px;
+.team-member h3 {
+  color: var(--primary-color);
+  margin-bottom: 5px;
 }
 
-.socialmedia a {
-  display: inline-block;
+.team-member p {
+  color: var(--accent1-color);
+  font-style: italic;
 }
 
-.socialmedia a img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
-  filter: brightness(0) invert(1);
-}
-
-.socialmedia a img:hover {
-  transform: scale(1.1);
-}
-
-/* Responsive Design */
+/* Responsive Design for Contact Page */
 @media (max-width: 768px) {
-  header {
+  .contact-container {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 15px;
   }
   
-  nav {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+  .team-grid {
+    grid-template-columns: 1fr;
   }
   
-  .adventure-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  footer {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-about {
-    height: 300px;
+  .hero-contact {
+    height: 250px;
     margin: 20px 15px;
+  }
+  
+  .hero-contact h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-contact p {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .adventure-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  nav a {
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-content p {
-    font-size: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  .card {
-    padding: 20px;
+  .contact-info-section {
     margin: 20px 15px;
+  }
+  
+  .team-section {
+    margin: 30px 15px;
+  }
+  
+  .team-member img {
+    width: 120px;
+    height: 120px;
   }
 }

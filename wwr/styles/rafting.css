@@ -1,4 +1,477 @@
 /* ================================
+   Global Styles & Variables
+   ================================ */
+:root {
+  --primary-color: #396e94;
+  --secondary-color: #e7c24f;
+  --accent1-color: #a43312;
+  --accent2-color: #381d2a;
+  --text-color: #333;
+  --background-color: #f8f9fa;
+  --white: #ffffff;
+  --gray-light: #f1f1f1;
+  --gray-medium: #ddd;
+  --gray-dark: #666;
+  
+  --heading-font: 'Roboto Slab', serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================================
+   Header & Navigation
+   ================================ */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header img {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* ================================
+   Hero Sections (All Pages)
+   ================================ */
+.hero-home,
+.hero-about,
+.hero-trips {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  margin: 0;
+}
+
+.hero-home {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-home.jpg');
+}
+
+.hero-about {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-about.jpg');
+}
+
+.hero-trips {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-trips.jpg');
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+  background-color: var(--accent1-color);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Home Page Specific Styles
+   ================================ */
+.blog-posts {
+  padding: 4rem 2rem;
+  background-color: var(--white);
+}
+
+.blog-posts h2 {
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-post {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.blog-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-post h3 {
+  padding: 1rem 1rem 0.5rem;
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+}
+
+.blog-post p {
+  padding: 0 1rem 1rem;
+  color: var(--gray-dark);
+}
+
+.read-more {
+  display: inline-block;
+  padding: 0.5rem 1rem 1rem;
+  color: var(--accent1-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   About Page Specific Styles
+   ================================ */
+.history-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.history-section h2 {
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.history-section p {
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 2rem auto;
+}
+
+.adventures-section {
+  padding: 4rem 2rem;
+  background-color: var(--gray-light);
+}
+
+.adventures-section h2 {
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adventure-card {
+  text-align: center;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.adventure-card:hover {
+  transform: scale(1.05);
+}
+
+.adventure-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.adventure-card figcaption {
+  padding: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* ================================
+   Trips Page Specific Styles
+   ================================ */
+.featured-trips {
+  padding: 4rem 2rem;
+  background-color: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--gray-dark);
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trip-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.trip-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.trip-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.trip-content {
+  padding: 1.5rem;
+}
+
+.trip-content h3 {
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.trip-details {
+  margin: 1.5rem 0;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-medium);
+}
+
+.label {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.book-button {
+  display: block;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.book-button:hover {
+  background-color: var(--accent1-color);
+}
+
+/* Trip Table Section */
+.trip-table-section {
+  padding: 4rem 2rem;
+  background-color: var(--gray-light);
+}
+
+.trip-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.trip-table th,
+.trip-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-medium);
+}
+
+.trip-table th {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.trip-table tr:hover {
+  background-color: var(--gray-light);
+}
+
+.book-trip-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.book-trip-button:hover {
+  background-color: var(--accent1-color);
+  color: var(--white);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: var(--heading-font);
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.cta-section p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button.primary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+/* ================================
    Contact Page Styles
    ================================ */
 
@@ -178,8 +651,75 @@
   font-style: italic;
 }
 
-/* Responsive Design for Contact Page */
+/* ================================
+   Footer Styles
+   ================================ */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+.socialmedia {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.socialmedia a {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.socialmedia a:hover {
+  transform: scale(1.1);
+}
+
+.footer-center-link {
+  margin: 1rem 0;
+}
+
+.footer-center-link a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-center-link a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  nav {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
   .contact-container {
     grid-template-columns: 1fr;
   }
@@ -200,9 +740,41 @@
   .hero-contact p {
     font-size: 1rem;
   }
+  
+  .trip-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .hide-on-mobile {
+    display: none;
+  }
+  
+  .trip-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero-home,
+  .hero-about,
+  .hero-trips {
+    height: 400px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
   .contact-info-section {
     margin: 20px 15px;
   }
@@ -214,5 +786,10 @@
   .team-member img {
     width: 120px;
     height: 120px;
+  }
+  
+  .blog-grid,
+  .adventure-grid {
+    grid-template-columns: 1fr;
   }
 }

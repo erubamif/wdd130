@@ -1,39 +1,42 @@
-/* -----------------------------
+/* =========================
    CSS Variables
------------------------------- */
+   ========================= */
 :root {
     --primary-color: #006994;
     /* deep blue */
     --secondary-color: #ff9f1c;
-    /* warm orange */
+    /* bright orange */
     --accent1-color: #011627;
-    /* dark navy */
+    /* very dark navy */
     --accent2-color: #fdfffc;
-    /* off-white */
+    /* near white */
     --heading-font: "Georgia", "Times New Roman", serif;
-    --body-font: "Arial", Helvetica, sans-serif;
+    --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* -----------------------------
-   Reset Box Model
------------------------------- */
-* {
+/* =========================
+   Universal Reset
+   ========================= */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* -----------------------------
-   Body Text
------------------------------- */
+/* =========================
+   Body Styles
+   ========================= */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    line-height: 1.6;
 }
 
-/* -----------------------------
-   Page Layout Width
------------------------------- */
+/* =========================
+   Header, Main, Footer Layout
+   ========================= */
 header,
 main,
 footer {
@@ -41,18 +44,18 @@ footer {
     margin: 0 auto;
 }
 
-/* -----------------------------
+/* =========================
    Headings
------------------------------- */
+   ========================= */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-/* -----------------------------
-   Basic Elements
------------------------------- */
+/* =========================
+   Basic Elements Styling
+   ========================= */
 nav,
 p,
 section,
@@ -61,16 +64,19 @@ article {
     padding: 8px;
 }
 
-/* -----------------------------
-   Social Media Links
------------------------------- */
-.socialmedia a {
+nav a {
     text-decoration: none;
+    margin-right: 12px;
+    color: var(--primary-color);
 }
 
-/* -----------------------------
-   Hero Div & Overlay
------------------------------- */
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* =========================
+   Hero Section
+   ========================= */
 .hero {
     position: relative;
 }
@@ -87,7 +93,7 @@ article {
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.8;
     background-color: var(--accent1-color);
     color: var(--accent2-color);
 }
@@ -96,17 +102,60 @@ article {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    width: 300px;
-    padding: 10px;
+    width: 40%;
     background-color: var(--secondary-color);
-    color: var(--accent2-color);
-    opacity: 0.85;
+    padding: 12px;
+    opacity: 0.9;
+    color: var(--accent1-color);
 }
 
 .hero article img {
     float: right;
     width: 125px;
-    margin: 0 0 10px 10px;
-    border: 2px solid var(--accent2-color);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-left: 12px;
+    border: 2px solid var(--accent1-color);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   Adventure Grid
+   ========================= */
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.adventure-card img {
+    width: 100%;
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 6px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+    margin: 32px auto 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--accent1-color);
+    text-align: center;
+    font-style: italic;
+}
+
+.socialmedia a {
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
 }

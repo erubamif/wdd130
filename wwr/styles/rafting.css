@@ -1,203 +1,166 @@
 /* =========================
-   CSS Variables
+   Hero Section - Contact Page
    ========================= */
-:root {
-    --primary-color: #006994;
-    /* deep blue */
-    --secondary-color: #ff9f1c;
-    /* bright orange */
-    --accent1-color: #011627;
-    /* very dark navy */
-    --accent2-color: #fdfffc;
-    /* near white */
-    --heading-font: "Georgia", "Times New Roman", serif;
-    --body-font: Arial, Helvetica, sans-serif;
-}
-
-/* =========================
-   Universal Reset
-   ========================= */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* =========================
-   Body Styles
-   ========================= */
-body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-    line-height: 1.6;
-}
-
-/* =========================
-   Header, Main, Footer Layout
-   ========================= */
-header,
-main,
-footer {
-    width: 840px;
-    margin: 0 auto;
-}
-
-/* =========================
-   Header (GRID REQUIRED)
-   ========================= */
-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-}
-
-header img {
-    width: 80px;
-}
-
-/* =========================
-   Headings
-   ========================= */
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-/* =========================
-   Basic Elements Styling
-   ========================= */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* =========================
-   Navigation (FLEX REQUIRED)
-   ========================= */
-nav {
+.hero-contact {
+    background: url('../images/contact-hero.jpg') center/cover no-repeat;
+    height: 300px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    margin-right: 12px;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: var(--secondary-color);
-}
-
-/* =========================
-   Hero Section
-   ========================= */
-.hero {
+    text-align: center;
+    color: var(--accent2-color);
     position: relative;
 }
 
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
+.hero-contact::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(1, 22, 39, 0.5);
 }
 
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
+.hero-contact .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.hero-contact p {
+    font-size: 1.2rem;
+}
+
+/* =========================
+   Contact Info & Form Section
+   ========================= */
+.contact-info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 32px auto;
+}
+
+.contact-container {
+    display: contents;
+    /* allows the grid to apply to children directly */
+}
+
+.company-info,
+.contact-form {
+    background-color: var(--accent2-color);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+/* =========================
+   Contact Form Styling
+   ========================= */
+.contact-form h2 {
+    margin-bottom: 12px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-family: var(--body-font);
+}
+
+.radio-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--accent2-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* =========================
+   Team Section
+   ========================= */
+.team-section {
+    margin: 48px auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.team-member {
+    background-color: var(--accent2-color);
     padding: 16px;
     text-align: center;
-    opacity: 0.8;
-    background-color: var(--accent1-color);
-    color: var(--accent2-color);
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 40%;
-    background-color: var(--secondary-color);
-    padding: 12px;
-    opacity: 0.9;
-    color: var(--accent1-color);
-}
-
-.hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 12px;
-    border: 2px solid var(--accent1-color);
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* =========================
-   History Section (GRID REQUIRED)
-   ========================= */
-.history-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    align-items: center;
-}
-
-.history-content img {
+.team-member img {
     width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 8px;
 }
 
-/* =========================
-   Adventure Grid (5 IN A ROW)
-   ========================= */
-.adventure-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-}
-
-.adventure-card img {
-    width: 100%;
-    display: block;
-}
-
-figcaption {
-    text-align: center;
-    margin-top: 6px;
-    font-weight: bold;
+.team-member h3 {
     color: var(--primary-color);
+    margin-bottom: 4px;
 }
 
-/* =========================
-   Footer (FLEX + RIGHT ALIGN)
-   ========================= */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 32px auto 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--accent1-color);
-    font-style: italic;
-}
-
-.socialmedia {
-    display: flex;
-    gap: 10px;
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    width: 32px;
-    height: 32px;
+.team-member p {
+    font-size: 0.95rem;
+    color: var(--accent1-color);
 }

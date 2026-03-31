@@ -4,9 +4,11 @@
 .hero-contact {
     position: relative;
     background-image: url("../images/contact-hero.jpg");
+    /* Correct relative path from styles/ folder */
     background-size: cover;
     background-position: center;
     height: 300px;
+    /* adjust height as needed */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,20 +16,23 @@
 
 .hero-contact .hero-content {
     background-color: rgba(1, 22, 39, 0.7);
-    /* semi-transparent overlay */
+    /* semi-transparent dark overlay for readability */
     color: var(--accent2-color);
-    padding: 20px 40px;
+    padding: 20px;
     text-align: center;
+    max-width: 80%;
     border-radius: 8px;
 }
 
 .hero-contact h1 {
-    font-size: 2.2rem;
+    font-family: var(--heading-font);
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .hero-contact p {
-    font-size: 1.2rem;
+    font-family: var(--body-font);
+    font-size: 1rem;
 }
 
 /* =========================

@@ -45,6 +45,19 @@ footer {
 }
 
 /* =========================
+   Header (GRID REQUIRED)
+   ========================= */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+header img {
+    width: 80px;
+}
+
+/* =========================
    Headings
    ========================= */
 h1,
@@ -64,10 +77,20 @@ article {
     padding: 8px;
 }
 
+/* =========================
+   Navigation (FLEX REQUIRED)
+   ========================= */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 nav a {
     text-decoration: none;
     margin-right: 12px;
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 nav a:hover {
@@ -118,11 +141,25 @@ nav a:hover {
 }
 
 /* =========================
-   Adventure Grid
+   History Section (GRID REQUIRED)
+   ========================= */
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.history-content img {
+    width: 100%;
+}
+
+/* =========================
+   Adventure Grid (5 IN A ROW)
    ========================= */
 .adventure-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
 }
 
@@ -139,23 +176,28 @@ figcaption {
 }
 
 /* =========================
-   Footer
+   Footer (FLEX + RIGHT ALIGN)
    ========================= */
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 32px auto 16px;
     padding-top: 16px;
     border-top: 1px solid var(--accent1-color);
-    text-align: center;
     font-style: italic;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 10px;
 }
 
 .socialmedia a {
     text-decoration: none;
-    margin: 0 8px;
 }
 
 .socialmedia img {
     width: 32px;
     height: 32px;
-    vertical-align: middle;
 }

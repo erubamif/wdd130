@@ -210,3 +210,85 @@ footer nav.socialmedia {
     font-family: var(--body-font);
     font-size: 1.2rem;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header,
+footer {
+    background: #003366;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: white;
+    font-size: 2rem;
+}
+
+.newsletter,
+.cta {
+    text-align: center;
+    padding: 2rem;
+}
+
+.btn {
+    background: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-content img {
+    width: 100%;
+}
+
+.trips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.trip img {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
